@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 97%;
+    --foreground: 220 25% 12%;
+
+    --card: 40 15% 94%;
+    --card-foreground: 220 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 12%;
+
+    --primary: 40 65% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 10% 90%;
+    --secondary-foreground: 220 20% 25%;
+
+    --muted: 40 10% 92%;
+    --muted-foreground: 220 10% 42%;
+
+    --accent: 40 50% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 15% 85%;
+    --input: 40 15% 85%;
+    --ring: 40 65% 45%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 40 15% 94%;
+    --sidebar-foreground: 220 25% 12%;
+    --sidebar-primary: 40 65% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 10% 90%;
+    --sidebar-accent-foreground: 220 25% 12%;
+    --sidebar-border: 40 15% 85%;
+    --sidebar-ring: 40 65% 45%;
+
+    /* Custom tokens */
+    --gold: 40 65% 45%;
+    --gold-light: 40 55% 60%;
+    --gold-dark: 40 70% 32%;
+    --navy: 220 25% 12%;
+    --navy-light: 220 20% 20%;
+    --charcoal: 220 15% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-elegant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer components {
+  .gold-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-dark)));
+  }
+
+  .gold-line {
+    background: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
+    height: 1px;
+  }
+
+  .gold-line-left {
+    background: linear-gradient(90deg, hsl(var(--gold)), transparent);
+    height: 1px;
+  }
+
+  .panel-section {
+    @apply min-h-screen flex items-center justify-center relative overflow-hidden;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50;
+  }
+
+  .subtle-glow {
+    box-shadow: 0 0 80px -20px hsl(var(--gold) / 0.08);
+  }
+}
